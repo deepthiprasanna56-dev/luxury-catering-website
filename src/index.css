@@ -1,0 +1,166 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@theme {
+  --animate-float: float 4s ease-in-out infinite;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-ink: #24362b;
+  --color-paper: #faf9f6;
+  --color-paper-cream: #f4f2ec;
+  --color-green: #446b50;
+  --color-green-dark: #253c2d;
+  --color-green-light: #528160;
+  --color-lime: #dce6bd;
+  --color-coral: #d96f51;
+  --color-coral-hover: #c45d40;
+  --color-line: #e4e2d9;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'DM Sans', sans-serif;
+}
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #24362b;
+  background: #faf9f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  scroll-behavior: smooth;
+
+  /* shadcn UI variables */
+  --background: #faf9f6;
+  --foreground: #24362b;
+  --card: #ffffff;
+  --card-foreground: #24362b;
+  --popover: #ffffff;
+  --popover-foreground: #24362b;
+  --primary: #253c2d;
+  --primary-foreground: #ffffff;
+  --secondary: #eff3ea;
+  --secondary-foreground: #253c2d;
+  --muted: #f3f5ee;
+  --muted-foreground: #626d63;
+  --accent: #dce6bd;
+  --accent-foreground: #253c2d;
+  --destructive: #d96f51;
+  --destructive-foreground: #ffffff;
+  --border: #e2e1d7;
+  --input: #d5dbce;
+  --ring: #446b50;
+  --radius: 0.5rem;
+
+  --ink: #24362b;
+  --paper: #faf9f6;
+  --paper-cream: #f3f1ea;
+  --paper-card: #ffffff;
+  --green: #446b50;
+  --green-dark: #253c2d;
+  --green-light: #528160;
+  --lime: #dce6bd;
+  --coral: #d96f51;
+  --coral-hover: #c55a3c;
+  --line: #e2e1d7;
+  --line-light: #ecebe3;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--paper);
+  color: var(--ink);
+  /* Clip horizontal spill without introducing an overflow scroll container. */
+  overflow-x: clip;
+}
+
+body, button, input, select, textarea {
+  font-family: var(--sans);
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
